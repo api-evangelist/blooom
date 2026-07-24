@@ -1,8 +1,26 @@
 aid: blooom
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/blooom.png
 name: Blooom
-description: 'Blooom is a company surfaced as a portfolio company of qed-investors and added to the API
-  Evangelist network as a stub for enrichment. Sector: wealth-management. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: 'Blooom was an independent robo-advisor that provided automated, flat-fee management of
+  employer-sponsored retirement accounts — 401(k), 403(b), 457, and TSP plans — analyzing holdings,
+  rebalancing allocations, and flagging hidden fund fees on accounts it advised but did not directly
+  custody. Founded in 2013 and backed by QED Investors, the Kansas-based company operated a consumer
+  web application rather than a public developer API. The consumer service has since wound down:
+  blooom.com no longer resolves to a website and the domain is now served by Morgan Stanley
+  nameservers with a locked-down, mail-disabled defensive DNS posture (null MX, SPF -all, DMARC
+  p=reject). Retained here as a historical wealth-management profile; no live API or developer surface
+  remains to enrich.'
 url: https://raw.githubusercontent.com/api-evangelist/blooom/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,12 +28,21 @@ x-backed-by:
 - qed-investors
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct
+x-status-evidence: 'blooom.com has no A record and resolves to Morgan Stanley nameservers (ext-nsN.morganstanley.net)
+  with null MX (0 .), SPF -all, and DMARC p=reject as of 2026-07-18 DNS probe; no live website or API.'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Wealth Management
+- Retirement
+- 401k
+- Robo-Advisor
+- Investing
+- Fintech
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,5 +50,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/blooom-domain-security.yml
 - type: Website
   url: http://blooom.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
