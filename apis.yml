@@ -31,7 +31,7 @@ x-tier-reason: portfolio-lead
 x-status: defunct
 x-status-evidence: 'blooom.com has no A record and resolves to Morgan Stanley nameservers (ext-nsN.morganstanley.net)
   with null MX (0 .), SPF -all, and DMARC p=reject as of 2026-07-18 DNS probe; no live website or API.'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 tags:
